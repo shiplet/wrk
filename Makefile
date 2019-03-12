@@ -75,7 +75,7 @@ $(ODIR)/%.o : %.c
 LUAJIT  := $(notdir $(patsubst %.tar.gz,%,$(wildcard deps/LuaJIT*.tar.gz)))
 OPENSSL := $(notdir $(patsubst %.tar.gz,%,$(wildcard deps/openssl*.tar.gz)))
 
-OPENSSL_OPTS = no-shared no-psk no-srp no-dtls no-idea --prefix=$(abspath $(ODIR))
+OPENSSL_OPTS = no-shared no-async no-psk no-srp no-dtls no-idea --prefix=$(abspath $(ODIR))
 
 $(ODIR)/$(LUAJIT):  deps/$(LUAJIT).tar.gz  | $(ODIR)
 	@tar -C $(ODIR) -xf $<
